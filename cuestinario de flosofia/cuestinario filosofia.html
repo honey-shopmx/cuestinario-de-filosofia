@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Examen Mixto Filosofía del Derecho - 15 Múltiple + 5 Abiertas</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 920px; margin: 30px auto; padding: 0 20px; background: #f8f9fa; color: #222; }
+        h1, h2 { text-align: center; color: #1a3c5e; }
+        h1 { border-bottom: 4px solid #007bff; padding-bottom: 15px; }
+        .instrucciones { background: #e3f2fd; padding: 18px; border-left: 6px solid #007bff; margin: 25px 0; border-radius: 8px; }
+        .pregunta { background: white; padding: 22px; margin: 30px 0; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .pregunta h3 { margin: 0 0 15px; color: #0056b3; font-size: 1.25em; }
+        label { display: block; margin: 12px 0; cursor: pointer; font-size: 1.05em; }
+        input[type="radio"] { margin-right: 12px; transform: scale(1.2); }
+        textarea { width: 100%; height: 120px; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; }
+        button { background: #28a745; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 1.1em; margin-top: 18px; }
+        button:hover { background: #218838; }
+        .resultado { margin-top: 18px; padding: 16px; border-radius: 8px; font-weight: bold; min-height: 60px; }
+        .correcto  { background: #d4edda; color: #155724; border-left: 6px solid #28a745; }
+        .incorrecto { background: #f8d7da; color: #721c24; border-left: 6px solid #dc3545; }
+        .explicacion { margin-top: 10px; font-style: italic; color: #444; display: block; }
+        #puntaje { text-align: center; font-size: 1.6em; margin: 35px 0; padding: 20px; background: #e9ecef; border-radius: 10px; font-weight: bold; }
+        .respuesta-modelo { background: #fff3cd; padding: 15px; border-left: 6px solid #ffc107; margin-top: 15px; border-radius: 6px; display: none; }
+        .final { text-align: center; margin: 50px 0; font-size: 1.4em; color: #006400; display: none; }
+    </style>
+</head>
+<body>
+
+<h1>Examen Parcial Mixto<br>Filosofía del Derecho (Segundo Semestre)</h1>
+
+<div class="instrucciones">
+    <strong>Instrucciones:</strong><br>
+    • 15 preguntas de opción múltiple (5 pts cada una → máximo 75 pts)<br>
+    • 5 preguntas abiertas (desarrollo corto – escribe en el cuadro)<br>
+    • Para las abiertas: pulsa "Mostrar respuesta modelo" para comparar lo que escribiste<br>
+    • Puntaje solo de las múltiples se actualiza automáticamente<br>
+    • Tiempo sugerido: 60-75 minutos
+</div>
+
+<div id="puntaje">Puntaje múltiples: 0 / 75</div>
+
+<form id="examen">
+
+    <!-- Preguntas múltiples 1-15 -->
+
+    <div class="pregunta">
+        <h3>1. La tridimensionalidad del derecho incluye:</h3>
+        <label><input type="radio" name="q1" value="a"> a) Solo normas positivas creadas por el Estado</label>
+        <label><input type="radio" name="q1" value="b"> b) Derecho natural, valores, realidad y norma</label>
+        <label><input type="radio" name="q1" value="c"> c) Iusnaturalismo junto al positivismo jurídico</label>
+        <label><input type="radio" name="q1" value="d"> d) Enfoque científico según Hans Kelsen</label>
+        <button type="button" onclick="verificar(1, 'b', 'Derecho natural + axiológica + realismo + normativismo')">Verificar</button>
+        <div id="res1" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>2. El derecho natural se relaciona principalmente con:</h3>
+        <label><input type="radio" name="q2" value="a"> a) La dimensión fáctica y realidad social</label>
+        <label><input type="radio" name="q2" value="b"> b) La dimensión axiológica y los valores</label>
+        <label><input type="radio" name="q2" value="c"> c) El normativismo y sistema de normas</label>
+        <label><input type="radio" name="q2" value="d"> d) El realismo y conducta de jueces</label>
+        <button type="button" onclick="verificar(2, 'b', 'Axiological = hacia los valores')">Verificar</button>
+        <div id="res2" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>3. El realismo jurídico se asocia con:</h3>
+        <label><input type="radio" name="q3" value="a"> a) La dimensión normativa y el deber ser</label>
+        <label><input type="radio" name="q3" value="b"> b) La dimensión fáctica y la realidad concreta</label>
+        <label><input type="radio" name="q3" value="c"> c) La dimensión axiológica y los valores</label>
+        <label><input type="radio" name="q3" value="d"> d) El derecho natural superior al positivo</label>
+        <button type="button" onclick="verificar(3, 'b', 'Realismo jurídico = factice = realidad = cosa')">Verificar</button>
+        <div id="res3" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>4. Autor de la Teoría Pura del Derecho:</h3>
+        <label><input type="radio" name="q4" value="a"> a) H.L.A. Hart</label>
+        <label><input type="radio" name="q4" value="b"> b) Ronald Dworkin</label>
+        <label><input type="radio" name="q4" value="c"> c) Hans Kelsen</label>
+        <label><input type="radio" name="q4" value="d"> d) John Finnis</label>
+        <button type="button" onclick="verificar(4, 'c', 'Hans Kelsen – Teoría Pura del Derecho')">Verificar</button>
+        <div id="res4" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>5. Para el positivismo jurídico el derecho es válido cuando:</h3>
+        <label><input type="radio" name="q5" value="a"> a) Cumple exigencias morales universales</label>
+        <label><input type="radio" name="q5" value="b"> b) Se crea siguiendo procedimientos formales</label>
+        <label><input type="radio" name="q5" value="c"> c) Coincide con el derecho natural superior</label>
+        <label><input type="radio" name="q5" value="d"> d) Refleja intereses mayoritarios sociales</label>
+        <button type="button" onclick="verificar(5, 'b', 'Validez por procedimiento, independiente de moral')">Verificar</button>
+        <div id="res5" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>6. Aristóteles distingue dos tipos principales de justicia:</h3>
+        <label><input type="radio" name="q6" value="a"> a) Distributiva y conmutativa</label>
+        <label><input type="radio" name="q6" value="b"> b) Conmutativa y correctiva</label>
+        <label><input type="radio" name="q6" value="c"> c) Distributiva y retributiva</label>
+        <label><input type="radio" name="q6" value="d"> d) Legal y equitativa</label>
+        <button type="button" onclick="verificar(6, 'a', 'Justicia distributiva y conmutativa – Ética a Nicómaco')">Verificar</button>
+        <div id="res6" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>7. El problema ontológico en filosofía del derecho pregunta:</h3>
+        <label><input type="radio" name="q7" value="a"> a) ¿Cuál es el contenido justo de las normas?</label>
+        <label><input type="radio" name="q7" value="b"> b) ¿Cómo interpretar una norma jurídica?</label>
+        <label><input type="radio" name="q7" value="c"> c) ¿Qué es el derecho en su esencia?</label>
+        <label><input type="radio" name="q7" value="d"> d) ¿Cuándo es legítimo desobedecer?</label>
+        <button type="button" onclick="verificar(7, 'c', 'Problema ontológico: ¿qué es el derecho? – naturaleza')">Verificar</button>
+        <div id="res7" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>8. El iusnaturalismo sostiene que existe:</h3>
+        <label><input type="radio" name="q8" value="a"> a) Derecho natural superior al positivo</label>
+        <label><input type="radio" name="q8" value="b"> b) Derecho solo como ley positiva estatal</label>
+        <label><input type="radio" name="q8" value="c"> c) Derecho como predicción judicial</label>
+        <label><input type="radio" name="q8" value="d"> d) Derecho como sistema de principios</label>
+        <button type="button" onclick="verificar(8, 'a', 'Derecho natural superior – Santo Tomás de Aquino')">Verificar</button>
+        <div id="res8" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>9. Según Kelsen la ciencia jurídica debe:</h3>
+        <label><input type="radio" name="q9" value="a"> a) Mezclar moral, política y derecho</label>
+        <label><input type="radio" name="q9" value="b"> b) Separar derecho y moral estrictamente</label>
+        <label><input type="radio" name="q9" value="c"> c) Analizar consecuencias sociales reales</label>
+        <label><input type="radio" name="q9" value="d"> d) Basarse en el concepto de hombre malo</label>
+        <button type="button" onclick="verificar(9, 'b', 'Pureza metodológica: separar derecho y moral')">Verificar</button>
+        <div id="res9" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>10. El realismo americano ve el derecho como:</h3>
+        <label><input type="radio" name="q10" value="a"> a) Predicción judicial e ingeniería social</label>
+        <label><input type="radio" name="q10" value="b"> b) Sistema normativo cerrado y completo</label>
+        <label><input type="radio" name="q10" value="c"> c) Conjunto de normas primarias y secundarias</label>
+        <label><input type="radio" name="q10" value="d"> d) Aplicación de principios morales</label>
+        <button type="button" onclick="verificar(10, 'a', '“Hombre malo”, predicción, ingeniería social')">Verificar</button>
+        <div id="res10" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>11. Diferencia clave realismo escandinavo vs americano:</h3>
+        <label><input type="radio" name="q11" value="a"> a) El americano es más técnico y formal</label>
+        <label><input type="radio" name="q11" value="b"> b) El escandinavo fusiona realidad y normas</label>
+        <label><input type="radio" name="q11" value="c"> c) El americano acepta derecho natural</label>
+        <label><input type="radio" name="q11" value="d"> d) El escandinavo rechaza toda norma</label>
+        <button type="button" onclick="verificar(11, 'b', 'Escandinavo: preocupaciones técnicas + fusión realidad-normas')">Verificar</button>
+        <div id="res11" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>12. Hart distingue en su normativismo:</h3>
+        <label><input type="radio" name="q12" value="a"> a) Solo normas primarias de conducta</label>
+        <label><input type="radio" name="q12" value="b"> b) Normas primarias y normas secundarias</label>
+        <label><input type="radio" name="q12" value="c"> c) Solo normas secundarias de cambio</label>
+        <label><input type="radio" name="q12" value="d"> d) Bienes básicos humanos universales</label>
+        <button type="button" onclick="verificar(12, 'b', 'Normas primarias y secundarias – H.L.A. Hart')">Verificar</button>
+        <div id="res12" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>13. Según Dworkin en casos difíciles el juez:</h3>
+        <label><input type="radio" name="q13" value="a"> a) Crea derecho nuevo con discrecionalidad</label>
+        <label><input type="radio" name="q13" value="b"> b) Interpreta principios ya existentes</label>
+        <label><input type="radio" name="q13" value="c"> c) Aplica solo reglas explícitas</label>
+        <label><input type="radio" name="q13" value="d"> d) Ignora principios y decide equidad</label>
+        <button type="button" onclick="verificar(13, 'b', 'Interpreta principios – no crea derechos – Dworkin')">Verificar</button>
+        <div id="res13" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>14. Finnis define el derecho como:</h3>
+        <label><input type="radio" name="q14" value="a"> a) Ordenación social hacia el bien común</label>
+        <label><input type="radio" name="q14" value="b"> b) Sistema normativo puro y formal</label>
+        <label><input type="radio" name="q14" value="c"> c) Predicción de decisiones judiciales</label>
+        <label><input type="radio" name="q14" value="d"> d) Conjunto de reglas y directrices</label>
+        <button type="button" onclick="verificar(14, 'a', 'Ordenación al bien común – Finnis')">Verificar</button>
+        <div id="res14" class="resultado" style="display:none;"></div>
+    </div>
+
+    <div class="pregunta">
+        <h3>15. Entre los bienes básicos de Finnis están:</h3>
+        <label><input type="radio" name="q15" value="a"> a) Vida, conocimiento, religión y sociabilidad</label>
+        <label><input type="radio" name="q15" value="b"> b) Orden, seguridad, poder y riqueza</label>
+        <label><input type="radio" name="q15" value="c"> c) Reglas, principios y directrices</label>
+        <label><input type="radio" name="q15" value="d"> d) Normas primarias y secundarias</label>
+        <button type="button" onclick="verificar(15, 'a', 'Vida, conocimiento, sociabilidad, religión…')">Verificar</button>
+        <div id="res15" class="resultado" style="display:none;"></div>
+    </div>
+
+    <!-- Preguntas abiertas 16-20 -->
+
+    <div class="pregunta">
+        <h3>16. Explica brevemente qué es la filosofía del derecho y su relación con la moral.</h3>
+        <textarea id="resp16" placeholder="Escribe tu respuesta aquí (4-8 líneas)"></textarea>
+        <button type="button" onclick="mostrarModelo(16)">Mostrar respuesta modelo</button>
+        <div id="modelo16" class="respuesta-modelo">
+            La filosofía del derecho es el estudio filosófico del derecho, analizando sus fundamentos, conceptos y valores. Estudia preguntas como ¿qué es el derecho?, ¿qué es la justicia?, ¿por qué obedecer la ley? Su conexión con la moral es central: analiza si el derecho debe ser moral (iusnaturalismo) o si es independiente de ella (positivismo). Según tus apuntes: "es el estudio filosófico del derecho y su conexión con la moral".
+        </div>
+    </div>
+
+    <div class="pregunta">
+        <h3>17. Describe la pureza metodológica de Hans Kelsen en la Teoría Pura del Derecho.</h3>
+        <textarea id="resp17" placeholder="Escribe tu respuesta aquí (4-8 líneas)"></textarea>
+        <button type="button" onclick="mostrarModelo(17)">Mostrar respuesta modelo</button>
+        <div id="modelo17" class="respuesta-modelo">
+            La pureza metodológica de Kelsen consiste en estudiar el derecho como un sistema normativo independiente de la moral, la política, la sociología y otros elementos no normativos. La ciencia jurídica debe centrarse solo en la estructura de las normas (deber ser), separando estrictamente el "ser" (realidad fáctica) del "deber ser" (norma). Esto permite un análisis objetivo, lógico-formal y neutral valorativamente del derecho positivo.
+        </div>
+    </div>
+
+    <div class="pregunta">
+        <h3>18. ¿Qué son las normas primarias y secundarias según H.L.A. Hart? Explica la diferencia.</h3>
+        <textarea id="resp18" placeholder="Escribe tu respuesta aquí (4-8 líneas)"></textarea>
+        <button type="button" onclick="mostrarModelo(18)">Mostrar respuesta modelo</button>
+        <div id="modelo18" class="respuesta-modelo">
+            Normas primarias: imponen deberes de conducta a los ciudadanos (prohibiciones, obligaciones, como "no matar"). Normas secundarias: regulan la creación, modificación y aplicación de las primarias. Hay tres tipos: de reconocimiento (identifican qué es derecho válido), de cambio (permiten modificar normas) y de adjudicación (crean órganos para resolver controversias). Diferencia: las primarias regulan conducta; las secundarias hacen posible un sistema jurídico evolucionado y eficiente.
+        </div>
+    </div>
+
+    <div class="pregunta">
+        <h3>19. Explica cómo resuelve Ronald Dworkin los casos difíciles.</h3>
+        <textarea id="resp19" placeholder="Escribe tu respuesta aquí (4-8 líneas)"></textarea>
+        <button type="button" onclick="mostrarModelo(19)">Mostrar respuesta modelo</button>
+        <div id="modelo19" class="respuesta-modelo">
+            En casos difíciles (hard cases), donde no hay regla clara, el juez no tiene discrecionalidad para crear derecho nuevo. Debe interpretar el sistema jurídico como un todo coherente, considerando no solo reglas, sino también principios morales y políticos implícitos en la práctica jurídica. El juez confirma o deniega derechos ya existentes según la mejor interpretación moral de la comunidad. Así, el derecho incluye reglas + principios + directrices políticas.
+        </div>
+    </div>
+
+    <div class="pregunta">
+        <h3>20. Menciona y explica al menos cuatro bienes básicos según John Finnis (neo-iusnaturalismo).</h3>
+        <textarea id="resp20" placeholder="Escribe tu respuesta aquí (4-8 líneas)"></textarea>
+        <button type="button" onclick="mostrarModelo(20)">Mostrar respuesta modelo</button>
+        <div id="modelo20" class="respuesta-modelo">
+            Según Finnis, los bienes básicos son valores objetivos que la razón práctica reconoce como intrínsecamente valiosos para la realización humana. Ejemplos: 1) Vida (salud, supervivencia); 2) Conocimiento (búsqueda de verdad); 3) Sociabilidad/amistad (relaciones humanas); 4) Religión (búsqueda de sentido trascendente). Otros incluyen experiencia estética y razonabilidad práctica. Estos bienes justifican por sí mismos el derecho como ordenación al bien común.
+        </div>
+    </div>
+
+</form>
+
+<button style="display:block; margin:40px auto; background:#007bff; padding:15px 30px; font-size:1.2em;" onclick="mostrarTodosModelos()">Mostrar TODAS las respuestas modelo</button>
+
+<div class="final" id="mensajeFinal">
+    ¡Examen terminado! Compara tus respuestas abiertas con los modelos y repasa lo que necesites. ¡Mucho éxito en tu parcial! 💪
+</div>
+
+<script>
+    let puntaje = 0;
+
+    function verificar(num, correcta, explicacion) {
+        const radios = document.getElementsByName('q' + num);
+        let seleccion = null;
+        for (let r of radios) {
+            if (r.checked) { seleccion = r.value; break; }
+        }
+
+        const res = document.getElementById('res' + num);
+        res.style.display = 'block';
+
+        if (!seleccion) {
+            res.className = 'resultado incorrecto';
+            res.innerHTML = 'Selecciona una opción primero.';
+            return;
+        }
+
+        if (seleccion === correcta) {
+            res.className = 'resultado correcto';
+            res.innerHTML = '¡Correcto! <span class="explicacion">' + explicacion + '</span>';
+            if (!res.dataset.yaContado) {
+                puntaje += 5;
+                res.dataset.yaContado = 'true';
+                document.getElementById('puntaje').innerHTML = `Puntaje múltiples: ${puntaje} / 75`;
+            }
+        } else {
+            res.className = 'resultado incorrecto';
+            res.innerHTML = `Incorrecto.<br>Correcta: <strong>${correcta.toUpperCase()}</strong><br><span class="explicacion">${explicacion}</span>`;
+        }
+    }
+
+    function mostrarModelo(num) {
+        document.getElementById('modelo' + num).style.display = 'block';
+    }
+
+    function mostrarTodosModelos() {
+        for (let i = 16; i <= 20; i++) {
+            document.getElementById('modelo' + i).style.display = 'block';
+        }
+        document.getElementById('mensajeFinal').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
